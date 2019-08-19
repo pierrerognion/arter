@@ -1,0 +1,18 @@
+<div>
+    <% @artworks.each do |artwork| %>
+      <div>
+        <%= cl_image_tag artwork.picture, height: 300, width: 400, crop: :fill %>
+        <div>
+          <h2><%= link_to artwork.name.capitalize , artwork_path(artwork) %>
+            </h2>
+
+          <h2>
+            <%= link_to "🗑", artwork_path(artwork),
+            method: :delete,
+            data: { confirm: "Are you sure that you want to delete it ?" } %>
+            </h2>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
