@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_08_19_133004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artworks", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "category"
+    t.integer "width"
+    t.integer "depth"
+    t.integer "height"
+    t.integer "weight"
+    t.integer "price"
+    t.boolean "availability", default: true
+    t.string "location"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
