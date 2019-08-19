@@ -1,0 +1,13 @@
+<h2> Homepage</h2>
+
+<div>
+    <% @artworks.each do |artwork| %>
+      <div>
+        <div>
+          <h2><%= link_to artwork.name , artwork_path(artwork) %>
+            </h2>
+        </div>
+
+      </div>
+    <% end %>
+  </div>

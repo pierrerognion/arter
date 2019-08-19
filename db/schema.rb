@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_133004) do
+ActiveRecord::Schema.define(version: 2019_08_19_141829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,33 @@ ActiveRecord::Schema.define(version: 2019_08_19_133004) do
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_artworks_on_user_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.bigint "artwork_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artwork_id"], name: "index_bookings_on_artwork_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "password"
+    t.string "email"
+    t.date "birth_date"
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "artworks", "users"
+  add_foreign_key "bookings", "artworks"
+  add_foreign_key "bookings", "users"
 end
