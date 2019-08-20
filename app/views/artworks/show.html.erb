@@ -1,3 +1,33 @@
-<h2><%= @artwork.name %></h2>
+<div class="container">
+  <img src="<%= cl_image_path @artwork.picture %>" class="img-fluid" alt="Responsive image">
+  <div class="card-product">
 
-<p>Caractéristiques de l'œuvre d'art…</p>
+    <img src="<%= @artwork.user.avatar %>" class="card-trip-user avatar-bordered" />
+    <div class="card-product-infos">
+    <h2><%= @artwork.name %></h2>
+    <p>Information sur l'oeuvre : <%= @artwork.description %></p>
+    <p>Artiste : <%= @artwork.artist %></p>
+    <p>Dimension  L<%= @artwork.height %>* l<%= @artwork.width %>* P<%= @artwork.depth %> en cm</p>
+    <p><strong>Prix : <%= @artwork.price %> € </p>
+    <p></p>
+    </div>
+  </div>
+
+  <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
