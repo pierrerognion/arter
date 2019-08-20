@@ -1,1 +1,67 @@
+<div class="container center">
+   <div class="d-flex justify-content-center nav-step-container">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item nav-bar">
+          <a class="nav-link active" id="pills-first-tab" data-toggle="pill" href="#pills-first" role="tab" aria-controls="pills-first" aria-selected="true">Etape 1</a>
+        </li>
+        <li class="nav-item nav-bar">
+          <a class="nav-link" id="pills-second-tab" data-toggle="pill" href="#pills-second" role="tab" aria-controls="pills-second" aria-selected="false">Etape 2</a>
+        </li>
+        <li class="nav-item nav-bar">
+          <a class="nav-link" id="pills-third-tab" data-toggle="pill" href="#pills-third" role="tab" aria-controls="pills-third" aria-selected="false">Etape 3</a>
+        </li>
+        <li class="nav-item nav-bar">
+          <a class="nav-link" id="pills-fourth-tab" data-toggle="pill" href="#pills-fourth" role="tab" aria-controls="pills-fourth" aria-selected="false">Etape 4</a>
+        </li>
+          <li class="nav-item nav-bar">
+          <a class="nav-link" id="pills-fifth-tab" data-toggle="pill" href="#pills-fifth" role="tab" aria-controls="pills-fifth" aria-selected="false">Etape 5</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="tab-content form-new" id="pills-tabContent">
+      <%= simple_form_for(@artwork) do |f| %>
+        <div>
+          <div class="tab-pane fade mt-3 display-none show active" id="pills-first" role="tabpanel" aria-labelledby="pills-first-tab">
+            <h3>De quel type d'oeuvre d'art s'agit-il ?</h3>
+            <%= f.input :category, :label => "Catégorie" %>
+          </div>
+
+          <div class="tab-pane mt-3 fade display-none" id="pills-second" role="tabpanel" aria-labelledby="pills-second-tab">
+            <h3>Decrivez l'oeuvre</h3>
+            <%= f.input :name, :label => "Nom de l'oeuvre" %>
+            <%= f.input :artist, :label => "Nom de l'artiste" %>
+            <%= f.input :description, :label => "Description" %>
+          </div>
+
+          <div class="tab-pane fade mt-3  display-none" id="pills-third" role="tabpanel" aria-labelledby="pills-third-tab">
+            <h3>Quels sont les caractéristiques de votre oeuvre ?</h3>
+            <%= f.input :picture, :label => "Image" %>
+            <%= f.input :height, :label => "Hauteur (cm)" %>
+            <%= f.input :width, :label => "Largeur (cm)" %>
+            <%= f.input :depth, :label => "Profondeur(cm)" %>
+            <%= f.input :weight, :label => "Poids (kg)" %>
+          </div>
+
+           <div class="tab-pane fade mt-3  display-none" id="pills-fourth" role="tabpanel" aria-labelledby="pills-fourth-tab">
+            <h3>Dans quel zone géographique se situe votre oeuvre ?</h3>
+            <div class="form-group string optional artwork_location">
+              <%= f.label :country, "Pays" %>
+              <%= f.country_select :country %>
+            </div>
+            <%= f.input :location, :label => "Adresse" %>
+          </div>
+
+          <div class="tab-pane fade mt-3 display-none" id="pills-fifth" role="tabpanel" aria-labelledby="pills-fifth-tab">
+            <h3>Quel est le prix de votre oeuvre ?</h3>
+            <%= f.input :price, :label => "Prix (€)"  %>
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        </div>
+
+       <% end %>
+    </div>
+</div>
+
 <%= render 'form', artwork: @artwork %>
