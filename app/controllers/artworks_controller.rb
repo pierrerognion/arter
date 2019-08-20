@@ -13,6 +13,12 @@ class ArtworksController < ApplicationController
     redirect_to artwork_path(@artwork)
   end
 
+  # def edit
+  #   unless @artwork.user == current_user
+  #     flash
+  #     redirect_to..
+  # end
+
   def show
     @artwork = Artwork.find(params[:id])
   end
