@@ -1,17 +1,50 @@
-<%= simple_form_for(@artwork) do |f| %>
+ <div class="d-flex justify-content-center mt-5">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-first-tab" data-toggle="pill" href="#pills-first" role="tab" aria-controls="pills-first" aria-selected="true">Etape 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-second-tab" data-toggle="pill" href="#pills-second" role="tab" aria-controls="pills-second" aria-selected="false">Etape 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-third-tab" data-toggle="pill" href="#pills-third" role="tab" aria-controls="pills-third" aria-selected="false">Etape 3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-fourth-tab" data-toggle="pill" href="#pills-fourth" role="tab" aria-controls="pills-fourth" aria-selected="false">Etape 4</a>
+      </li>
+    </ul>
+  </div>
 
-  <%= f.input :name %>
-  <%= f.input :artist %>
-  <%= f.input :description %>
-  <%= f.input :category %>
-  <%= f.input :width %>
-  <%= f.input :depth %>
-  <%= f.input :height %>
-  <%= f.input :weight %>
-  <%= f.input :price %>
-  <%= f.input :location %>
-  <%= f.input :picture %>
+  <div class="tab-content" id="pills-tabContent">
+    <%= simple_form_for(@artwork) do |f| %>
 
-  <%= f.submit %>
+    <div class="tab-pane fade display-none show active" id="pills-first" role="tabpanel" aria-labelledby="pills-first-tab">
+      <%= f.input :category, :label => "Commencez par choisir une catégorie" %>
+    </div>
 
-<% end %>
+    <div class="tab-pane fade display-none" id="pills-second" role="tabpanel" aria-labelledby="pills-second-tab">
+      <%= f.input :name %>
+      <%= f.input :artist %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+    </div>
+
+    <div class="tab-pane fade display-none" id="pills-third" role="tabpanel" aria-labelledby="pills-third-tab">
+      <%= f.input :picture %>
+      <%= f.input :width %>
+      <%= f.input :depth %>
+      <%= f.input :height %>
+      <%= f.input :weight %>
+
+    </div>
+
+    <div class="tab-pane fade display-none" id="pills-fourth" role="tabpanel" aria-labelledby="pills-fourth-tab">
+      <%= f.input :price %>
+      <%= f.submit %>
+    </div>
+
+    <% end %>
+  </div>
+
+</div>
+
