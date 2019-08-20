@@ -9,27 +9,27 @@
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "Prénom" } %>
+                label: "Prénom" %>
     <%= f.input :last_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "Nom" } %>
+                label: "Nom" %>
     <%= f.input :birth_date,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "Date de naissance" } %>
+                label: "Date de naissance" %>
 
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                label: "Email" %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                label: "Mot de passe" %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                label: "Confirmation du mot de passe" %>
   </div>
 
   <div class="form-actions">
