@@ -1,0 +1,7 @@
+.show {
+  display: block;
+}
+
+#artwork_country {
+  @extend .form-control
+}
