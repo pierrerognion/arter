@@ -1,5 +1,5 @@
 <div class="container">
-  <img src="<%= cl_image_path @artwork.picture %>" class="img-fluid" alt="Responsive image">
+  <img src="<%= cl_image_path @artwork.picture.url(:show_artwork) %>" class="img-fluid" alt="Responsive image">
   <div class="card-product">
 
     <img src="<%= @artwork.user.avatar %>" class="card-trip-user avatar-bordered" />
@@ -12,3 +12,4 @@
     <p></p>
     </div>
   </div>
+
