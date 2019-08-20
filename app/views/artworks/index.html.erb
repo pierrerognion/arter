@@ -1,7 +1,7 @@
 <div class="container py-5">
   <h3>Toutes les œuvres (<%= @artworks.count %>)</h3>
   <div>
-  <div class="cards-home">
+  <div class="cards-home py-3">
     <% @artworks.each do |artwork| %>
       <div class="card card-radius">
         <img src=<%= artwork.picture %> class="card-img-top w-100" alt="...">
