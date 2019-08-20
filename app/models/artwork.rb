@@ -1,4 +1,5 @@
 class Artwork < ApplicationRecord
+  mount_uploader :picture, PictureUploader
   has_many :bookings
   belongs_to :user
   validates :name, presence: true, uniqueness: true
