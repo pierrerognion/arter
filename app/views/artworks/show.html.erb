@@ -1,14 +1,47 @@
 <div class="container">
-  <img src="<%= cl_image_path @artwork.picture %>" class="img-fluid" alt="Responsive image">
-  <div class="card-product">
 
-    <img src="<%= @artwork.user.avatar %>" class="card-trip-user avatar-bordered" />
-    <div class="card-product-infos">
-    <h2><%= @artwork.name %></h2>
-    <p>Information sur l'oeuvre : <%= @artwork.description %></p>
-    <p>Artiste : <%= @artwork.artist %></p>
-    <p>Dimension  L<%= @artwork.height %>* l<%= @artwork.width %>* P<%= @artwork.depth %> en cm</p>
-    <p><strong>Prix : <%= @artwork.price %> € </p>
-    <p></p>
+  <div class="d-flex">
+
+    <div>
+      <img src="<%= cl_image_path @artwork.picture %>" class="img-fluid" alt="Responsive image">
+    </div>
+
+    <div>
+      <div class="d-flex flex-column">
+
+        <div class="p-2">
+          <img src="<%= @artwork.user.avatar %>" class="card-trip-user avatar-bordered" />
+          <div class="card-product-infos">
+            <img src="" class="card-trip-user avatar-bordered" />
+            <h2><%= @artwork.name %></h2>
+            <p>Information sur l'oeuvre : <%= @artwork.description %></p>
+            <p>Artiste : <%= @artwork.artist %></p>
+            <p>Dimension  L<%= @artwork.height %>* l<%= @artwork.width %>* P<%= @artwork.depth %> en cm</p>
+            <p><strong>Prix : <%= @artwork.price %> € </p>
+
+          </div>
+        </div>
+
+        <div class="p-2">
+            <h5>Réserver maintenant :</h5>
+              <form action="">
+                <div class="input-group">
+                  <span class="input-group-text" id="basic-addon3">From:</span>
+                  <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mt-2">
+                  <span class="input-group-text" id="basic-addon3">To:   </span>
+                  <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+                </div class="card bg-white text-black">
+                <input type="submit" value="Réserver" class="btn btn-success mt-2" style="width: 100%">
+            </form>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+
+
+
+
