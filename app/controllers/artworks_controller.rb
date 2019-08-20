@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+  before_action :set_artwork, only: [:show, :edit, :update]
   def index
     @artworks = Artwork.all
   end
@@ -14,14 +15,19 @@ class ArtworksController < ApplicationController
     redirect_to artwork_path(@artwork)
   end
 
-  # def edit
-  #   unless @artwork.user == current_user
-  #     flash
-  #     redirect_to..
-  # end
+  def edit
+    unless @artwork.user == current_user
+      flash[:alert] = "Vous n'êtes pas autorisé à modifier cette annonce."
+      redirect_to artwork_path(@artwork)
+    end
+  end
+
+  def update
+    @artwork.update(artwork_params)
+    redirect_to artwork_path(@artwork)
+  end
 
   def show
-    @artwork = Artwork.find(params[:id])
   end
 
   private
@@ -40,5 +46,9 @@ class ArtworksController < ApplicationController
                                     :picture,
                                     :artist,
                                     :country)
+  end
+
+  def set_artwork
+    @artwork = Artwork.find(params[:id])
   end
 end

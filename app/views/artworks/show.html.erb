@@ -19,6 +19,10 @@
             <p><strong>Prix : <%= @artwork.price %> € </p>
 
           </div>
+
+          <% if @artwork.user == current_user %>
+            <%= link_to "Modifier l'annonce", edit_artwork_path(@artwork), class: 'btn btn-primary' %>
+          <% end %>
         </div>
 
         <div class="p-2">
