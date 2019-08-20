@@ -10,6 +10,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+
       <!-- <header> -->
         <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
           <%= link_to artworks_path, class: "navbar-brand" do %>
@@ -52,18 +53,12 @@
         </div>
       <!-- </header> -->
 
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
 
     <%= yield %>
-    <div class="mb-5"></div>
 
-    <footer class="text-muted">
-        <div class="container">
-          <p class="float-right">
-            <a href="#">Retour en haut</a>
-          </p>
-          <p> &copy; arter, the art marketplace.</p>
-        </div>
-      </footer>
+    <%= render "shared/footer" %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

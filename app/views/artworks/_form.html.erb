@@ -1,4 +1,4 @@
-<div class="container center">
+<div class="container">
    <div class="d-flex justify-content-center nav-step-container">
       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item nav-bar">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="tab-content form-new" id="pills-tabContent">
-      <%= simple_form_for(@artwork) do |f| %>
+      <%= simple_form_for(artwork) do |f| %>
         <div>
           <div class="tab-pane fade mt-3 display-none show active" id="pills-first" role="tabpanel" aria-labelledby="pills-first-tab">
             <h3>De quel type d'oeuvre d'art s'agit-il ?</h3>
@@ -56,12 +56,10 @@
           <div class="tab-pane fade mt-3 display-none" id="pills-fifth" role="tabpanel" aria-labelledby="pills-fifth-tab">
             <h3>Quel est le prix de votre oeuvre ?</h3>
             <%= f.input :price, :label => "Prix (€)"  %>
-            <%= f.submit class: 'btn btn-primary' %>
+            <%= f.submit %>
           </div>
         </div>
 
        <% end %>
     </div>
 </div>
-
-<%= render 'form', artwork: @artwork %>
