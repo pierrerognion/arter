@@ -27,3 +27,11 @@ h1 {
 p {
   font-family: Avenir
 }
+
+a {
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+  color: black;
+}

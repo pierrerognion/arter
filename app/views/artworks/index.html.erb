@@ -3,14 +3,16 @@
   <div>
   <div class="cards-home py-3">
     <% @artworks.each do |artwork| %>
-      <div class="card card-radius">
-        <img src=<%= artwork.picture %> class="card-img-top w-100" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
-          <p class="card-text"><%= artwork.description %></p>
-          <p class="card-text"><%= artwork.artist %></p>
+      <%= link_to artwork_path(artwork) do %>
+        <div class="card card-radius">
+          <img src=<%= artwork.picture %> class="card-img-top w-100" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
+            <p class="card-text"><%= artwork.description %></p>
+            <p class="card-text"><%= artwork.artist %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <div class="spacer-40"></div>
