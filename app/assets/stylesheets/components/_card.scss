@@ -22,7 +22,8 @@
 }
 
 .card:hover img {
-  transform: translateY(-20px);
+  transform: translateY(-80px);
+  transform: scale(1.05, 1.05);
 }
 
 .card .card-img-top {
@@ -35,6 +36,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
   overflow: hidden;
+}
+
+.card-body {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 29px;
 }
 
 .card-artwork-pricing {
