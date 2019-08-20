@@ -9,6 +9,7 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
+    @artwork.user = current_user
     @artwork.save
     redirect_to artwork_path(@artwork)
   end
@@ -36,6 +37,8 @@ class ArtworksController < ApplicationController
                                     :price,
                                     :location,
                                     :availability,
-                                    :picture)
+                                    :picture,
+                                    :artist,
+                                    :country)
   end
 end
