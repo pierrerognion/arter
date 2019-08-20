@@ -5,3 +5,20 @@
 #artwork_country {
   @extend .form-control
 }
+
+.form-new {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-top: 40px;
+  background-color: white;
+  padding: 40px;
+}
+
+.nav-step-container {
+  margin-top: 60px;
+}
+
+.nav-bar{
+  background-color: #FBFF32;
+  color: black;
+}
