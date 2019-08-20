@@ -6,4 +6,5 @@ class Artwork < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   validates :picture, presence: true
+  mount_uploader :picture, PictureUploader
 end
