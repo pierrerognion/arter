@@ -1,8 +1,8 @@
 .card-artwork {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0, 0.15);
 }
 
 .cards-home {
@@ -10,9 +10,24 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
 }
+
+.card:hover {
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0, 0.5);
+}
+
+.card {
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover img {
+  transform: translateY(-20px);
+}
+
 .card .card-img-top {
   height: 400px;
   object-fit: cover;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .card-radius {
