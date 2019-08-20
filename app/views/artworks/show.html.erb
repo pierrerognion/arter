@@ -1,3 +1,14 @@
-<h2><%= @artwork.name %></h2>
+<div class="container">
+  <img src="<%= cl_image_path @artwork.picture %>" class="img-fluid" alt="Responsive image">
+  <div class="card-product">
 
-<p>Caractéristiques de l'œuvre d'art…</p>
+    <img src="<%= @artwork.user.avatar %>" class="card-trip-user avatar-bordered" />
+    <div class="card-product-infos">
+    <h2><%= @artwork.name %></h2>
+    <p>Information sur l'oeuvre : <%= @artwork.description %></p>
+    <p>Artiste : <%= @artwork.artist %></p>
+    <p>Dimension  L<%= @artwork.height %>* l<%= @artwork.width %>* P<%= @artwork.depth %> en cm</p>
+    <p><strong>Prix : <%= @artwork.price %> € </p>
+    <p></p>
+    </div>
+  </div>
