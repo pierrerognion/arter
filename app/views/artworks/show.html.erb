@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="d-flex">
+  <div class="d-md-flex flex-md-equal w-100 my-md3 pl-md-3">
 
     <div>
       <img src="<%= cl_image_path @artwork.picture.url(:show_artwork) %>" class="img-fluid" alt="Responsive image">
@@ -26,22 +26,13 @@
         </div>
 
         <div class="p-2">
-            <h5>Réserver maintenant :</h5>
-              <form action="">
-                <div class="input-group">
-                  <span class="input-group-text" id="basic-addon3">Du:</span>
-                  <input type="text" class="form-control" placeholder="16/12/2019" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mt-2">
-                  <span class="input-group-text" id="basic-addon3">Au:   </span>
-                  <input type="text" class="form-control" placeholder="16/12/2019" aria-label="Username" aria-describedby="basic-addon1">
-                </div class="card bg-white text-black">
-                <input type="submit" value="Réserver" class="btn btn-flat-big mt-4" style="width: 200px">
-                
+
+
                 <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
-            </form>
+
         </div>
       </div>
     </div>
+
   </div>
 </div>
