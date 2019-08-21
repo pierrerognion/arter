@@ -1,0 +1,43 @@
+<div class="container py-5">
+
+    <h1>Mon tableau de bord</h1>
+    <h5><%= @user.email  %></h5>
+
+    <br>
+
+    <h3>Mes œuvres à louer (<%= @artworks.count %>)</h3>
+    <div class="cards-home py-3">
+      <% @artworks.each do |artwork| %>
+        <%= link_to artwork_path(artwork) do %>
+          <div class="card card-radius">
+            <img src=<%= cl_image_path artwork.picture.url(:index_card) %> class="card-img-top w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
+              <p class="card-text"><%= artwork.artist %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <br>
+
+
+    <h3>Mes œuvres réservées (<%= @bookings.count %>)</h3>
+    <div class="cards-home py-3">
+        <% @bookings.each do |booking| %>
+          <%= link_to booking_path(booking) do %>
+            <div class="card card-radius">
+              <img src=<%= cl_image_path booking.artwork.picture.url(:index_card) %> class="card-img-top w-100" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><strong><%= booking.artwork.name %></strong></h5>
+                <p class="card-text"><%= booking.artwork.artist %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>    
+
+</div>
+
+<br>
