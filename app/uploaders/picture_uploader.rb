@@ -5,7 +5,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   process convert: 'jpg'
 
   version :index_card do
-    cloudinary_transformation width: 400, height: 400, crop: :crop
+    cloudinary_transformation width: 400, height: 400, crop: :thumb
   end
 
   version :show_artwork do
