@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_artwork, only: [:show, :edit, :update]
   def index
     @bookings = Booking.all
   end
@@ -8,13 +9,17 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @artwork = Artwork.find(params[:artwork_id])
     @booking = Booking.new
+    @booking.user = current_user
   end
 
   def create
+    @artwork = Artwork.find(params[:artwork_id])
     @booking = Booking.new(booking_params)
-    if @booking.save!
-      redirect_to booking_path(@booking)
+    @booking.user = current_user
+    if @booking.save
+      redirect_to booking_path(@booking.artwork)
     else
       render :new
     end
@@ -42,6 +47,14 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:name, :photo, :start_date, :end_date, :user_id, :artwork_id)
+    params.require(:booking).permit(:name, 
+                                    :photo, 
+                                    :start_date, 
+                                    :end_date
+                                  )
+  end
+
+  def set_booking
+    @booking = Boooking.find(params[:id])
   end
 end

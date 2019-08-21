@@ -1,0 +1,7 @@
+<div>
+  <%= simple_form_for([artwork, booking]) do |f| %>
+    <%= f.input :start_date, :date => "Du" %>
+    <%= f.input :end_date, :date => "Au" %>
+    <%= f.submit class: "btn btn-flat-big mt-4", style: "width: 200px"%>
+  <% end %>
+</div>
