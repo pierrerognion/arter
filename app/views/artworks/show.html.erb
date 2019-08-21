@@ -1,20 +1,22 @@
-<div class="container">
-  <div class="d-md-flex flex-md-equal w-100 my-md3 pl-md-3">
+<div class="artwork-container">
+  <div class="d-md-flex flex-md-equal w-100">
 
-    <div>
-      <img src="<%= cl_image_path @artwork.picture.url(:show_artwork) %>" class="img-fluid" alt="Responsive image">
+    <div class="col-7">
+      <img src="<%= cl_image_path @artwork.picture.url(:show_artwork) %>"
+        class="img-show-artwork">
     </div>
 
-    <div>
-      <div class="d-flex flex-column">
+    <div class="col-5 mt-4">
+      <div class="d-flex flex-column px-2">
 
-        <div class="p-2">
-          <img src="<%= @artwork.user.avatar %>" class="card-trip-user avatar-bordered" />
+        <div>
+
           <div class="card-product-infos">
-            <img src="" class="card-trip-user avatar-bordered" />
+
             <h2><%= @artwork.name %></h2>
+            <h3>Artiste : <%= @artwork.artist %></h3>
+
             <p>Information sur l'œuvre : <%= @artwork.description %></p>
-            <p>Artiste : <%= @artwork.artist %></p>
             <p>Dimension  L<%= @artwork.height %>* l<%= @artwork.width %>* P<%= @artwork.depth %> en cm</p>
             <p><strong>Prix : <%= @artwork.price %> € </p>
 
@@ -25,12 +27,13 @@
           <% end %>
         </div>
 
-        <div class="p-2">
-
-
-                <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
-
+        <div>
+          <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
         </div>
+
+
+
+
       </div>
     </div>
 
