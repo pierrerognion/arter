@@ -50,9 +50,7 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:name, 
                                     :photo, 
                                     :start_date, 
-                                    :end_date,
-                                    :artwork_id
-                                    :user_id
+                                    :end_date
                                   )
   end
 
