@@ -1,4 +1,3 @@
-<!-- <div class="signup-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'background_signup.jpg' %>);"> -->
 <div class="signup-banner">
 
   <div class="container center">
@@ -35,17 +34,20 @@
                         required: true,
                         autofocus: true,
                         label: "Date de naissance" %>
-
           </div>
+
 
         <div class="d-flex justify-content-around form-actions">
           <div>
-            <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
-            <%= link_to "Login", new_user_session_path, class: 'mx-auto ' %>
+            <%= f.button :submit, "Inscription", class: 'btn red-b-btn mt-4' %>
           </div>
         </div>
+          <div class="d-flex justify-content-center mt-3">
+           <div class="d-inline p-2 ">Vous avez déjà un compte Arter ?</div>
+           <div class="d-inline p-2"><%= link_to "Connexion", new_user_session_path, class: 'red-h-btn mt-3' %></div>
+          </div>
 
       </div>
-      <% end %>
+    <% end %>
     </div>
 </div>
