@@ -21,7 +21,7 @@
 }
 
 .nav-bar{
-  background-color: #FBFF32;
+  background-color: $light-gray;
   color: black;
 }
 
@@ -32,4 +32,15 @@
 
 #first-tab {
   justify-content: flex-end;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 5px;
+  background: #ED254E;
+  box-shadow: 0 10px 30px rgba(135, 129, 130, 0.5);
+  transition: background 0.3s ease;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
