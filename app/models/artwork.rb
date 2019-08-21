@@ -1,6 +1,6 @@
 class Artwork < ApplicationRecord
   mount_uploader :picture, PictureUploader
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
   validates :name, presence: true, uniqueness: true
   validates :artist, presence: true
