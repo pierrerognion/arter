@@ -9,25 +9,29 @@
     <div class="col-5 mt-4">
       <div class="d-flex flex-column px-2">
 
-        <div>
-
-          <div class="card-product-infos">
-
-            <h2><%= @artwork.name %></h2>
-            <h3>Artiste : <%= @artwork.artist %></h3>
-
-            <p>Information sur l'œuvre : <%= @artwork.description %></p>
-            <p>Dimension  L<%= @artwork.height %>* l<%= @artwork.width %>* P<%= @artwork.depth %> en cm</p>
-            <p><strong>Prix : <%= @artwork.price %> € </p>
-
+        <div class="card-product-infos">
+          <h2><%= @artwork.name %></h2>
+          <h4 class="font-italic"><%= @artwork.artist %></h4>
+          <p><%= @artwork.description %></p>
+          <div>
+            <p>Hauteur : <%= @artwork.height %> cm</p>
+            <p>Largeur : <%= @artwork.width %> cm</p>
+            <p>Profondeur : <%= @artwork.depth %> cm</p>
+            <p>Poids : <%= @artwork.weight %> kg</p>
           </div>
 
+          <p>Prix de la location : <%= @artwork.price %> €</p>
+
           <% if @artwork.user == current_user %>
-            <%= link_to "Modifier l'annonce", edit_artwork_path(@artwork), class: 'btn btn-primary' %>
+            <%= link_to "Modifier l'annonce", edit_artwork_path(@artwork), class: 'btn btn-flat-big mt-4', style: "width: 200px" %>
           <% end %>
         </div>
 
         <div>
+          <hr class="my-4">
+
+          <h4>Réserver cette œuvre</h4>
+
           <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
         </div>
 
