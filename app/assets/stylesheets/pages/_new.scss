@@ -24,3 +24,12 @@
   background-color: #FBFF32;
   color: black;
 }
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#first-tab {
+  justify-content: flex-end;
+}
