@@ -2,7 +2,7 @@
 
   <div class="container center">
     <div class="tab-content form-new">
-      <h2 class="d-flex justify-content-center">S'inscrire</h2>
+      <h2 class="d-flex justify-content-center"></h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
           <div class="form-inputs">
@@ -29,7 +29,7 @@
                         label: "Confirmation du mot de passe" %>
             <%= f.input :birth_date,
                         as: :date,
-                        start_year: Date.today.year - 90,
+                        start_year: Date.today.year - 19,
                         end_year: Date.today.year - 12,
                         required: true,
                         autofocus: true,
@@ -37,12 +37,12 @@
           </div>
 
 
-        <div class="d-flex justify-content-around form-actions">
+        <div class="d-flex justify-content-around form-actions mt-5">
           <div>
-            <%= f.button :submit, "Inscription", class: 'btn red-b-btn mt-4' %>
+            <%= f.button :submit, "Inscription", class: 'btn-flat-big' %>
           </div>
         </div>
-          <div class="d-flex justify-content-center mt-3">
+          <div class="d-flex justify-content-center mt-4">
            <div class="d-inline p-2 ">Vous avez déjà un compte Arter ?</div>
            <div class="d-inline p-2"><%= link_to "Connexion", new_user_session_path, class: 'red-h-btn mt-3' %></div>
           </div>

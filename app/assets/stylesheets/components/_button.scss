@@ -32,6 +32,7 @@
   box-shadow: 0 20px 30px rgba(237,37,78, 0.5);
 }
 
+
 .btn-flat-big {
   color: white;
   padding: 8px 24px;
@@ -41,6 +42,38 @@
   transition: background 0.3s ease;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
+
+.btn-flat-skin:hover {
+  color: #F39A4B;
+  transform: scale(1.05, 1.05);
+}
+
+.btn-flat-skin {
+  font-size: 13px;
+  color: #ED254E;
+  padding: 8px 24px;
+  transition: font 0.3s ease;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+.red-h-btn:hover {
+  color: #F39A4B;
+  transition: font 0.3s ease;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.red-h-btn{
+  color: #ed254e;
+}
+
+
+.red-b-btn{
+  color: white;
+  background-color: #ed254e;
+}
+
 
 .btn-gradient {
   color: white;
