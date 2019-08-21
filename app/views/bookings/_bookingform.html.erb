@@ -1,0 +1,7 @@
+<div class="tab-content form-new" id="pills-tabContent">
+  <%= simple_form_for (booking) do |f| %> 
+    <%= f.input :start_date, :date => "Du" %> 
+    <%= f.input :end_date, :date => "Au" %> 
+    <%= f.submit %>
+  <% end %>
+</div>

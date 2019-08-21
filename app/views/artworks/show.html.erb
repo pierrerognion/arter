@@ -29,14 +29,16 @@
             <h5>Réserver maintenant :</h5>
               <form action="">
                 <div class="input-group">
-                  <span class="input-group-text" id="basic-addon3">From:</span>
-                  <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+                  <span class="input-group-text" id="basic-addon3">Du:</span>
+                  <input type="text" class="form-control" placeholder="16/12/2019" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mt-2">
-                  <span class="input-group-text" id="basic-addon3">To:   </span>
-                  <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+                  <span class="input-group-text" id="basic-addon3">Au:   </span>
+                  <input type="text" class="form-control" placeholder="16/12/2019" aria-label="Username" aria-describedby="basic-addon1">
                 </div class="card bg-white text-black">
-                <input type="submit" value="Réserver" class="btn btn-success mt-2" style="width: 100%">
+                <input type="submit" value="Réserver" class="btn btn-flat-big mt-4" style="width: 200px">
+                
+                <%= render "bookings/bookingform", booking: @booking %>
             </form>
         </div>
       </div>
