@@ -31,10 +31,8 @@
           <hr class="my-4">
 
           <h4>Réserver cette œuvre</h4>
-          
-          <% unless @artwork.user == current_user %>
-            <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
-          <% end %>
+
+          <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
         </div>
 
 
