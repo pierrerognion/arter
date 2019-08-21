@@ -25,13 +25,32 @@
   color: white;
 }
 
+
+.btn-flat-dark {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background: #878182;
+  box-shadow: 0 10px 30px rgba(135, 129, 130, 0.5);
+  transition: background 0.3s ease;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0.6;
+}
+
+.btn-flat-dark:hover {
+  background: #878182;
+  color: white;
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 20px 30px rgba(135, 129, 130, 0.5);
+}
+
+
 .btn-flat-big:hover {
   background: #ED254E;
   color: white;
   transform: scale(1.05, 1.05);
   box-shadow: 0 20px 30px rgba(237,37,78, 0.5);
 }
-
 
 .btn-flat-big {
   color: white;
