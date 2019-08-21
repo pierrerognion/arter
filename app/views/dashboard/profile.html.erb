@@ -30,7 +30,7 @@
         <% @bookings.each do |booking| %>
             <div class="card card-radius">
               <%= link_to booking_path(booking) do %>
-              <%= cl_image_path booking.artwork.picture.url(:index_card), class:"card-img-top w-100" %>
+              <%= cl_image_tag booking.artwork.picture.url(:index_card), class:"card-img-top w-100" %>
               <% end %>
               <div class="card-body">
                   <%= link_to booking_path(booking) do %>
