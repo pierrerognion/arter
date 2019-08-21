@@ -8,33 +8,39 @@
     <h3>Mes œuvres à louer (<%= @artworks.count %>)</h3>
     <div class="cards-home py-3">
       <% @artworks.each do |artwork| %>
-        <%= link_to artwork_path(artwork) do %>
           <div class="card card-radius">
-            <img src=<%= cl_image_path artwork.picture.url(:index_card) %> class="card-img-top w-100" alt="...">
+            <%= link_to artwork_path(artwork) do %>
+              <%= cl_image_tag artwork.picture.url(:index_card), class: "card-img-top w-100" %> 
+            <% end %>
             <div class="card-body">
-              <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
-              <p class="card-text"><%= artwork.artist %></p>
+              <%= link_to artwork_path(artwork) do %>
+                <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
+                <p class="card-text"><%= artwork.artist %></p>
+              <% end %>
+              <p class="card-text"><%= link_to "Retirer de la location", artwork_path(artwork), method: :delete %></p>
             </div>
           </div>
-        <% end %>
       <% end %>
     </div>
 
     <br>
 
-
     <h3>Mes œuvres réservées (<%= @bookings.count %>)</h3>
     <div class="cards-home py-3">
         <% @bookings.each do |booking| %>
-          <%= link_to booking_path(booking) do %>
             <div class="card card-radius">
-              <img src=<%= cl_image_path booking.artwork.picture.url(:index_card) %> class="card-img-top w-100" alt="...">
+              <%= link_to booking_path(booking) do %>
+              <%= cl_image_path booking.artwork.picture.url(:index_card), class:"card-img-top w-100" %>
+              <% end %>
               <div class="card-body">
+                  <%= link_to booking_path(booking) do %>
                 <h5 class="card-title"><strong><%= booking.artwork.name %></strong></h5>
                 <p class="card-text"><%= booking.artwork.artist %></p>
+                <% end %>
+                <p class="card-text"><%= link_to "Supprimer ma réservation", booking_path(booking), method: :delete %></p>
               </div>
             </div>
-          <% end %>
+          
         <% end %>
       </div>    
 
