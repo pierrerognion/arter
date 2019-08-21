@@ -29,7 +29,7 @@
 
         <div>
           
-          <% if @artwork.user == current_user %>
+          <% unless @artwork.user == current_user %>
           
             <hr class="my-4">
 
