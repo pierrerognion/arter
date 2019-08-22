@@ -1,50 +1,79 @@
 <div class="artwork-container">
   <div class="d-md-flex flex-md-equal w-100">
-
     <div class="col-7">
-      <img src="<%= cl_image_path @artwork.picture.url(:show_artwork) %>"
-        class="img-show-artwork">
+      <img
+        src="<%= cl_image_path @artwork.picture.url(:show_artwork) %>"
+        class="img-show-artwork"
+      />
     </div>
 
     <div class="col-5 mt-4">
       <div class="d-flex flex-column px-2">
-
         <div class="card-product-infos">
           <h2><%= @artwork.name %></h2>
           <h4 class="font-italic"><%= @artwork.artist %></h4>
           <p><%= @artwork.description %></p>
-          <div>
-            <p>Hauteur : <%= @artwork.height %> cm</p>
-            <p>Largeur : <%= @artwork.width %> cm</p>
-            <p>Profondeur : <%= @artwork.depth %> cm</p>
-            <p>Poids : <%= @artwork.weight %> kg</p>
+
+          <p>
+            <a
+              data-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+              ><strong>Voir les détails</strong>
+            </a>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <i
+                        class="fas fa-ruler-combined"
+                        style="color: #ED254E;"
+                      ></i>
+                    </td>
+                    <td>Hauteur <br /><%= @artwork.height %> cm</td>
+                    <td>Largeur <br /><%= @artwork.width %> cm</td>
+                    <td>Profondeur <br /><%= @artwork.depth %> cm</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <i
+                        class="fas fa-weight-hanging"
+                        style="color: #ED254E;"
+                      ></i>
+                    </td>
+                    <td><%= @artwork.weight %> kg</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
-          <p>Prix de la location : <%= @artwork.price %> €</p>
-
-          <% if @artwork.user == current_user %>
-            <%= link_to "Modifier l'annonce", edit_artwork_path(@artwork), class: 'btn btn-flat-big mt-4', style: "width: 200px" %>
-          <% end %>
+          <% if @artwork.user == current_user %> <%= link_to "Modifier
+          l'annonce", edit_artwork_path(@artwork), class: 'btn btn-flat-big
+          mt-4', style: "width: 200px" %> <% end %>
         </div>
 
         <div>
-          
           <% unless @artwork.user == current_user %>
-          
-            <hr class="my-4">
 
-            <h4>Réserver cette œuvre</h4>
+          <hr class="mb-4" />
 
-            <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
+          <h5>Réserver cette œuvre</h5>
+
+          <p>Prix par jour de location : <%= @artwork.price %> €</p>
+
+          <%= render "bookings/bookingform", artwork: @artwork, booking:
+          Booking.new %> <% end %>
           
-          <% end %>
         </div>
-
-
-
-
       </div>
     </div>
-
   </div>
 </div>

@@ -5,7 +5,11 @@ Artwork.destroy_all
 User.destroy_all
 
 toto = User.new(email:"pierrerognion@gmail.com", password:"testest")
+toto.remote_avatar_url = "https://res.cloudinary.com/dgfmeuzyy/image/upload/v1566480015/arter-pic/sistzuslmimxux0b095p_mscapw.jpg"
+toto.save
 nana = User.new(email:"nana@gmail.com", password:"password")
+nana.remote_avatar_url = "https://res.cloudinary.com/dgfmeuzyy/image/upload/v1566480662/arter-pic/51883681_r9syv2.jpg"
+nana.save
 
 puts 'Creating artworks...'
 artwork1 = Artwork.new(
