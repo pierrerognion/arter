@@ -2,7 +2,7 @@
 
 <div class="cards-home py-3">
   <% @artworks.each do |artwork| %>
-      <div class="card card-radius">
+      <div class="card-dash card-radius">
         <%= link_to artwork_path(artwork) do %>
           <%= cl_image_tag artwork.picture.url(:index_card), class: "card-img-top w-100" %>
         <% end %>
@@ -11,9 +11,12 @@
             <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
             <p class="card-text"><%= artwork.artist %></p>
           <% end %>
-          <p>Toggle</p>
-          <p class="card-text"><%= link_to "Retirer de la location", artwork_path(artwork), method: :delete %></p>
+
+          
+          <p><%= link_to "Change status", reset_availability_artwork_path(artwork), method: :post %> - <%= artwork.availability %></p>
+          
         </div>
       </div>
   <% end %>
 </div>
+

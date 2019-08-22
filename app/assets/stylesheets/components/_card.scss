@@ -21,6 +21,16 @@
   height: 520px;
 }
 
+.card-dash {
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  height: 520px;
+}
+
+.card-dash:hover {
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0, 0.5);
+}
+
 .card:hover img {
   transform: translateY(-80px);
   transform: scale(1.05, 1.05);
@@ -94,6 +104,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 8px;
 }
 
 .card-product-img {

@@ -43,6 +43,13 @@ class ArtworksController < ApplicationController
   def show
   end
 
+  def reset_availability
+    @artwork = Artwork.find(params[:id])
+    @artwork.availability = !@artwork.availability
+    @artwork.save
+    redirect_to profile_path
+  end
+
   def destroy
     @artwork = Artwork.find(params[:id])
     @artwork.destroy
