@@ -1,9 +1,10 @@
 footer {
-    clear: both;
-    position: relative;
-    margin-top: -400px;
+    // clear: both;
+    // margin-top: -400px;
+    // position: bottom;
+    height: 50px;
 }
 
 .min-footer {
-  min-height: 100vh;
+  min-height: calc(100vh - 120px);
 }
