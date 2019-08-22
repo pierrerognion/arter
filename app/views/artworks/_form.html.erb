@@ -58,10 +58,10 @@
                    </span>
                  </label>
 
-                <%= f.input :height, :label => "Hauteur (cm)" %>
-                <%= f.input :width, :label => "Largeur (cm)" %>
-                <%= f.input :depth, :label => "Profondeur(cm)" %>
-                <%= f.input :weight, :label => "Poids (kg)" %>
+                <%= f.input :height, :label => "Hauteur (cm)", placeholder: '25,4'%>
+                <%= f.input :width, :label => "Largeur (cm)", placeholder: '43,18' %>
+                <%= f.input :depth, :label => "Profondeur(cm)", placeholder: '20,96' %>
+                <%= f.input :weight, :label => "Poids (kg)", placeholder: '6,3' %>
               </fieldset>
               <div class="tab-buttons">
                 <button class="btn btn-flat-dark previous-btn mt-2" href="#">Précédent</button>
@@ -75,7 +75,7 @@
                 <div class="form-group string optional artwork_location">
                   <%= f.country_select :country, include_blank: 'Selectionner votre pays', selected: "Selectionner votre pays" %>
                 </div>
-                <%= f.input :location, :label => "Adresse" %>
+                <%= f.input :location, :label => "Adresse", placeholder: '80 rue de ménilmontant 75020 Paris' %>
               </fieldset>
               <div class="tab-buttons">
                 <button class="btn btn-flat-dark previous-btn mt-2" href="#">Précédent</button>
@@ -86,7 +86,7 @@
           <div class="tab-pane fade mt-3 display-none" id="pills-fifth" role="tabpanel" aria-labelledby="pills-fifth-tab">
             <h3 class="mb-4"> Quel est le Tarif journalier de votre œuvre ?</h3>
               <fieldset>
-                <%= f.input :price, :label => "Tarif / par jour (€)"  %>
+                <%= f.input :price, :label => "Tarif / par jour (€)",placeholder: '475'  %>
               </fieldset>
               <div class="tab-buttons">
                 <button class="btn btn-flat-dark previous-btn mt-2" href="#">Précédent</button>
