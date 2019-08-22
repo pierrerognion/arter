@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to profile_path
     else
-      flash[:alert] = "flash controller"
+      flash[:alert] = "Veuillez choisir une période de location valide."
       render 'artworks/show'
     end
   end
