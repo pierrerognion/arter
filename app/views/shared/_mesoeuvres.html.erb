@@ -11,6 +11,7 @@
             <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
             <p class="card-text"><%= artwork.artist %></p>
           <% end %>
+          <p>Toggle</p>
           <p class="card-text"><%= link_to "Retirer de la location", artwork_path(artwork), method: :delete %></p>
         </div>
       </div>
