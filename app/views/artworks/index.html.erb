@@ -1,5 +1,21 @@
-<div class="container py-5">
-  <h3>Œuvres disponibles (<%= @artworks.count %>)</h3>
+<div class="container">
+  <br>
+  <div class="centered-object">
+      <%= form_tag artworks_path, style:"display: flex", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "search-input-bar",
+        style: "border-radius: 50px 0px 0px 50px; width: 300px",
+        placeholder: "Trouver une œuvre ou un artiste"
+      %>
+      <%= submit_tag "Search", class: "btn btn-flat-search", style: "margin-left: 0px; border-radius: 0px 50px 50px 0px" %>
+    <% end %>
+  </div>
+  <br>
+  <!-- <br> TODO: improve -->
+  <% if params[:query].present? %>
+    <h4>Résultats de recherche (<%= @artworks.count %>)</h4>
+  <% end %>
   <div>
   <div class="cards-home py-3">
     <% @artworks.each do |artwork| %>
@@ -14,5 +30,4 @@
       <% end %>
     <% end %>
   </div>
-  <div class="spacer-40"></div>
 </div>

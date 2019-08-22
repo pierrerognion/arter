@@ -1,7 +1,17 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update]
   def index
-    @artworks = Artwork.all
+    if params[:query].present?
+      sql_query = " \
+      name @@ :query \
+      OR artist @@ :query \
+      OR description @@ :query \
+      OR category @@ :query \
+    "
+      @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @artworks = Artwork.all
+    end
   end
 
   def new
