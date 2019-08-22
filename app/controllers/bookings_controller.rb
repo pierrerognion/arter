@@ -10,6 +10,9 @@ class BookingsController < ApplicationController
   def create
     @artwork = Artwork.find(params[:artwork_id])
     @booking = Booking.new(booking_params)
+    full_date = @booking.date_range.split(' au ')
+    @booking.start_date = full_date[0]
+    @booking.end_date = full_date[1]
     @booking.artwork = @artwork
     @booking.user = current_user
     if @booking.save
@@ -37,6 +40,9 @@ class BookingsController < ApplicationController
   end
 
   def accepted!
+    @artwork = Artwork.find(params[:artwork_id])
+    @artwork.availability = false
+    @artwork.save
     @booking.status = "accepted"
     @booking.save
     redirect_to profile_path
@@ -51,7 +57,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :date_range)
   end
 
   def set_booking

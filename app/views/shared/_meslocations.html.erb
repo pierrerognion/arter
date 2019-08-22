@@ -10,7 +10,7 @@
       </div>
 
       <div class="d-flex row align-items-center">
-        <p class="mr-3">Du <%= booking.start_date %> au <%= booking.end_date %></p>
+        <p class="mr-3">Du <%= booking.date_range %></p>
         <p>Locataire : <%= booking.user.email %></p>
         <% if booking.status == "accepted" %>
           <p>Location validée</p>
