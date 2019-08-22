@@ -1,13 +1,16 @@
 <div class="container py-5">
   <br>
+  <div style="display: flex">
   <%= form_tag artworks_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
+    style: "border-radius: 50px; width: 300px",
     placeholder: "Trouver une œuvre ou un artiste"
   %>
   <%= submit_tag "Search", class: "btn btn-flat-big" %>
 <% end %>
+  </div>
   <br>
   <br>
   <h3>Toutes les œuvres (<%= @artworks.count %>)</h3>
