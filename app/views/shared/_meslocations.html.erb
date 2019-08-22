@@ -1,0 +1,27 @@
+<h3>Mes œuvres en location</h3>
+
+<% @user.get_bookings.each do |booking| %>
+  <div class="card-product">
+    <%= cl_image_tag booking.artwork.picture, class: "card-product-img" %>
+    <div class="card-product-infos d-flex">
+      <div>
+        <h2><%= booking.artwork.name %></h2>
+        <p><%= booking.artwork.artist %></p>
+      </div>
+
+      <div class="d-flex row align-items-center">
+        <p class="mr-3">Du <%= booking.start_date %> au <%= booking.end_date %></p>
+        <p>Locataire : <%= booking.user.email %></p>
+        <% if booking.status == "accepted" %>
+          <p>Location validée</p>
+        <% elsif booking.status == "declined" %>
+          <p>Location refusée</p>
+        <% else %>
+          <%= link_to "Accepter", accepted_artwork_booking_path(booking.artwork, booking), method: :patch, class: 'btn btn-flat-big mt-4' %>
+          <%= link_to "Refuser", declined_artwork_booking_path(booking.artwork, booking), method: :patch, class: 'btn btn-flat-big mt-4' %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+<% end %>

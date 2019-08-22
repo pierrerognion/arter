@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/profile", to: "dashboard#profile"
   resources :artworks do
-    resources :bookings, except: [:destroy]
+    resources :bookings, except: [:destroy] do
+      member do
+        patch "/accepted!", to: "bookings#accepted!", as: :accepted
+        patch "/declined!", to: "bookings#declined!", as: :declined
+      end
+    end
   end
   resources :bookings, only: [:destroy]
 end

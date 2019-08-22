@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :artworks
   has_many :bookings
+
+  def get_bookings
+    self.artworks.map { |artw| artw.bookings }.flatten
+  end
 end

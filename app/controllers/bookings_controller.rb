@@ -1,11 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_artwork, only: [:show, :edit, :update]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :accepted!, :declined!]
   def index
     @bookings = Booking.all
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def create
@@ -16,16 +15,15 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to profile_path
     else
+      flash[:alert] = "flash controller"
       render 'artworks/show'
     end
   end
 
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   def update
-    @bookings = Booking.find(params[:id])
     if @booking.update(booking_params)
       redirect_to booking_path(@booking)
     else
@@ -34,8 +32,19 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
+    redirect_to profile_path
+  end
+
+  def accepted!
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to profile_path
+  end
+
+  def declined!
+    @booking.status = "declined"
+    @booking.save
     redirect_to profile_path
   end
 
@@ -46,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    @booking = Boooking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 end
