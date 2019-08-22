@@ -1,35 +1,63 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="signup-banner">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <div class="container center">
+    <div class="tab-content form-new">
+      <h3 class="d-flex justify-content-center">Mon Profil</h3>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        label: "Email" %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <% end %>
+
+            <%= f.input :first_name,
+                        required: true,
+                        autofocus: true,
+                        label: "Prénom" %>
+            <%= f.input :last_name,
+                        required: true,
+                        autofocus: true,
+                        label: "Nom" %>
+            <%= f.input :birth_date,
+                        as: :date,
+                        start_year: Date.today.year - 19,
+                        end_year: Date.today.year - 12,
+                        required: true,
+                        autofocus: true,
+                        label: "Date de naissance" %>
+
+            <%= f.input :password,
+                        hint: "leave it blank if you don't want to change it",
+                        required: false,
+                        label: "Mot de passe" %>
+            <%= f.input :password_confirmation,
+                        required: false,
+                        label: "Confirmation du mot de passe"  %>
+            <%= f.input :current_password,
+                        hint: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
+                        required: true %>
+
+          </div>
+
+
+        <div class="d-flex justify-content-around form-actions mt-5">
+          <div>
+            <%= link_to "Précédent", :back, class: 'btn btn-flat-dark previous-btn mr-3 ' %>
+            <%= f.button :submit, "Modifier", class: 'btn-flat-big' %>
+          </div>
+        </div>
+          <div class="d-flex justify-content-center mt-4">
+           <div class="d-inline p-2 ">Malheureux ?</div>
+           <div class="d-inline p-2"><%= link_to "Supprimer mon Compte", registration_path(resource_name), class: 'red-h-btn mt-3', data: { confirm: "Are you sure?" }, method: :delete %>
+          </div>
+
+      </div>
     <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    </div>
+</div>
