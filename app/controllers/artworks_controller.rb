@@ -1,8 +1,18 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update]
-  # def index
-  #   @artworks = Artwork.all
-  # end
+  def index
+    if params[:query].present?
+      sql_query = " \
+      name @@ :query \
+      OR artist @@ :query \
+      OR description @@ :query \
+      OR category @@ :query \
+    "
+      @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @artworks = Artwork.all
+    end
+  end
 
   def new
     @artwork = Artwork.new
@@ -38,18 +48,6 @@ class ArtworksController < ApplicationController
     @artwork.destroy
     redirect_to artworks_path
   end
-
-    def index
-      if params[:query].present?
-        sql_query = " \
-        name @@ :query \
-        OR artist @@ :query \
-      "
-        @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
-      else
-        @artworks = Artwork.all
-      end
-    end
 
   private
 
