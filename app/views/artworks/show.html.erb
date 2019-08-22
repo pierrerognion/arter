@@ -28,11 +28,16 @@
         </div>
 
         <div>
-          <hr class="my-4">
+          
+          <% unless @artwork.user == current_user %>
+          
+            <hr class="my-4">
 
-          <h4>Réserver cette œuvre</h4>
+            <h4>Réserver cette œuvre</h4>
 
-          <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
+            <%= render "bookings/bookingform", artwork: @artwork, booking: Booking.new %>
+          
+          <% end %>
         </div>
 
 
