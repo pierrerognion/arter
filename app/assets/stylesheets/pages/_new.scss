@@ -43,6 +43,7 @@
 
 .form-group.string {
   position: relative;
+  height: 75px;
 }
 
 .form-control.string {
@@ -92,11 +93,21 @@ small {
 }
 
 // A REMETTRE SI TRAVAIL SUR LE JS
-// .form-group.string label {
-//   position: absolute;
-//   top: -15px;
-//   color: #0000004d;
-// }
+.form-group.string label {
+  position: absolute;
+  top: 12px;
+  color: #0000004d;
+  transition: all 0.7s ease-out;
+}
+
+.fgroup-focus label {
+  top: -30px !important;
+  // left: -20px;
+  color: #ed254e !important;
+  transform-origin: left;
+  transform: scale(0.7);
+  transition: all 0.7s ease-out;
+}
 
 textarea.form-control, textarea#artwork_country {
     height: 300px;
