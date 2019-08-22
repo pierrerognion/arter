@@ -25,7 +25,7 @@
     <% @artworks.each do |artwork| %>
       <%= link_to artwork_path(artwork) do %>
 
-        <div class="card card-radius">
+        <div class="card card-radius <%= "card-artwork-disable" if artwork.availability == false %>">
           <img src=<%= cl_image_path artwork.picture.url(:index_card) %> class="card-img-top w-100" alt="...">
           <img src= <%= cl_image_path artwork.user.avatar %> class=" card-trip-user avatar-bordered avatar-card-position" >
           <div class="card-body">
