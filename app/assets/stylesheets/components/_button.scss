@@ -62,6 +62,11 @@
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+// last button in the form ("Créer")
+input[type="submit" i] {
+    border-color: #ED254E;
+}
+
 .btn-flat-skin:hover {
   color: #F39A4B;
   transform: scale(1.05, 1.05);
