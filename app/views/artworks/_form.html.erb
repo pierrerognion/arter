@@ -34,7 +34,7 @@
           </div>
 
           <div class="tab-pane mt-3 fade display-none" id="pills-second" role="tabpanel" aria-labelledby="pills-second-tab">
-            <h3 class="mb-4">Decrivez l'œuvre</h3>
+            <h3 class="mb-4"> Decrivez votre œuvre</h3>
               <fieldset>
                 <%= f.input :name, :label => "Nom de l'œuvre" %>
                 <%= f.input :artist, :label => "Nom de l'artiste" %>
@@ -47,7 +47,7 @@
           </div>
 
           <div class="tab-pane fade mt-3  display-none" id="pills-third" role="tabpanel" aria-labelledby="pills-third-tab">
-            <h3>Quels sont les caractéristiques de votre œuvre ?</h3>
+            <h3> Quels sont les caractéristiques de votre œuvre ?</h3>
               <fieldset>
                 <label class="btn btn-flat-big mt-5 mb-5">
                    Ajouter une image
@@ -68,11 +68,10 @@
           </div>
 
            <div class="tab-pane fade mt-3  display-none" id="pills-fourth" role="tabpanel" aria-labelledby="pills-fourth-tab">
-            <h3 class="mb-4">Dans quel zone géographique se situe votre œuvre ?</h3>
+            <h3 class="mb-4"> Dans quel zone géographique se situe votre œuvre ?</h3>
               <fieldset>
                 <div class="form-group string optional artwork_location">
-                  <%= f.label :country, "Pays"  %>
-                  <%= f.country_select :country %>
+                  <%= f.country_select :country, include_blank: 'Selectionner votre pays', selected: "Selectionner votre pays" %>
                 </div>
                 <%= f.input :location, :label => "Adresse" %>
               </fieldset>
@@ -83,9 +82,9 @@
           </div>
 
           <div class="tab-pane fade mt-3 display-none" id="pills-fifth" role="tabpanel" aria-labelledby="pills-fifth-tab">
-            <h3 class="mb-4">Quel est le prix de votre œuvre ?</h3>
+            <h3 class="mb-4"> Quel est le Tarif journalier de votre œuvre ?</h3>
               <fieldset>
-                <%= f.input :price, :label => "Prix (€)"  %>
+                <%= f.input :price, :label => "Tarif / par jour (€)"  %>
               </fieldset>
               <div class="tab-buttons">
                 <button class="btn btn-flat-dark previous-btn mt-2" href="#">Précédent</button>
