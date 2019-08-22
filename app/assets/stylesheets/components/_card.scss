@@ -5,6 +5,10 @@
   box-shadow: 0 20px 40px rgba(0,0,0, 0.15);
 }
 
+.card-artwork-disable {
+  opacity: 0.5;
+}
+
 .cards-home {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
