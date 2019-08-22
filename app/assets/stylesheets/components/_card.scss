@@ -18,7 +18,7 @@
 
 .card {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  height: 560px;
+  height: 520px;
 }
 
 .card:hover img {
@@ -36,6 +36,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
   overflow: hidden;
+  position: relative
+
 }
 
 .card-body {
@@ -43,6 +45,8 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 29px;
+  position: absolute;
+  bottom: -24px;
 }
 
 .card-artwork-pricing {
