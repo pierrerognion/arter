@@ -1,0 +1,34 @@
+<h3>Mes réservations (<%= @bookings.count %>)</h3>
+
+<div class="cards-home py-3">
+  <% @bookings.each do |booking| %>
+      <div class="card card-radius">
+        <%= link_to booking_path(booking) do %>
+        <%= cl_image_tag booking.artwork.picture.url(:index_card), class:"card-img-top w-100" %>
+        <% end %>
+        <div class="card-body">
+            <%= link_to booking_path(booking) do %>
+          <h5 class="card-title"><strong><%= booking.artwork.name %></strong></h5>
+          <p class="card-text"><%= booking.artwork.artist %></p>
+          <% end %>
+
+          <div>
+            <% if booking.status == "pending" %>
+              <%= "En attente de validation par le propriétaire" %>
+            <% elsif booking.status == "accepted" %>
+              <%= "Réservation validée" %>
+            <% else %>
+              <%= "Réservation refusée" %>
+            <% end %>
+          </div>
+
+          <div class="d-flex justify-content-between mt-3">
+            <p class="card-text">Du <%= booking.start_date %> au <%= booking.end_date %></p>
+            <%= link_to "🗑️", booking_path(booking), method: :delete %>
+          </div>
+
+        </div>
+      </div>
+
+  <% end %>
+</div>

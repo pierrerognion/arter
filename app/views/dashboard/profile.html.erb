@@ -1,53 +1,19 @@
 <div class="container py-5">
 
-    <h1>Mon tableau de bord</h1>
-    
-    <br>
+  <h1>Mon tableau de bord</h1>
 
-    <h3>Mes œuvres à louer (<%= @artworks.count %>)</h3>
-    <div class="cards-home py-3">
-      <% @artworks.each do |artwork| %>
-          <div class="card card-radius">
-            <%= link_to artwork_path(artwork) do %>
-              <%= cl_image_tag artwork.picture.url(:index_card), class: "card-img-top w-100" %>
-            <% end %>
-            <div class="card-body">
-              <%= link_to artwork_path(artwork) do %>
-                <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
-                <p class="card-text"><%= artwork.artist %></p>
-              <% end %>
-              <p class="card-text"><%= link_to "Retirer de la location", artwork_path(artwork), method: :delete %></p>
-            </div>
-          </div>
-      <% end %>
-    </div>
+  <p><%= @user.email %></p>
 
-    <br>
+  <br>
 
-    <h3>Mes œuvres réservées (<%= @bookings.count %>)</h3>
-    <div class="cards-home py-3">
-        <% @bookings.each do |booking| %>
-            <div class="card card-radius">
-              <%= link_to booking_path(booking) do %>
-              <%= cl_image_tag booking.artwork.picture.url(:index_card), class:"card-img-top w-100" %>
-              <% end %>
-              <div class="card-body">
-                  <%= link_to booking_path(booking) do %>
-                <h5 class="card-title"><strong><%= booking.artwork.name %></strong></h5>
-                <p class="card-text"><%= booking.artwork.artist %></p>
-                <% end %>
+  <%= render "shared/meslocations" if @user.get_bookings.count > 0 %>
 
-                <div class="d-flex justify-content-between mt-3">
-                  <p class="card-text">Du <%= booking.start_date %> au <%= booking.end_date %></p>
-                  <%= link_to "🗑️", booking_path(booking), method: :delete %>
-                </div>
+  <br>
 
-              </div>
-            </div>
+  <%= render "shared/mesoeuvres" if @user.artworks.count != 0 %>
 
-        <% end %>
-      </div>
+  <br>
+
+  <%= render "shared/mesdemandes" if @bookings.count != 0 %>
 
 </div>
-
-<br>
