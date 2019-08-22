@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/profile", to: "dashboard#profile"
   resources :artworks do
+    member do
+      post 'reset_availability'
+    end
     resources :bookings, except: [:destroy] do
       member do
         patch "/accepted!", to: "bookings#accepted!", as: :accepted
