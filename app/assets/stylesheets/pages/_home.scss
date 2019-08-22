@@ -9,11 +9,11 @@ body{
 }
 
 h5 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h3 {
@@ -23,15 +23,15 @@ h3 {
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -46,8 +46,7 @@ a {
   display: none;
 }
 
-
-.center{
+.center {
   display: flex;
   justify-content: center;
 }
@@ -56,12 +55,12 @@ a {
   width: 75%;
   margin: 0 auto;
 }
-.card-container{
+.card-container {
   width: 800px;
   margin: 0 auto;
 }
 
-.cards{
+.cards {
   text-align: center;
 }
 
@@ -69,4 +68,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#booking_date_range {
+  width: 220px;
 }
