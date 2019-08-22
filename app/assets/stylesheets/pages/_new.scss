@@ -16,9 +16,9 @@
   width: 700px;
 }
 
-.nav-step-container {
-  margin-top: 60px;
-}
+// .nav-step-container {
+//   margin-top: 60px;
+// }
 
 .nav-bar{
   background-color: $light-gray;
@@ -43,8 +43,4 @@
   box-shadow: 0 10px 30px rgba(135, 129, 130, 0.5);
   transition: background 0.3s ease;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-input[type="submit" i] {
-    border-color: #ED254E;
 }
