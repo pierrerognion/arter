@@ -1,7 +1,7 @@
 <div>
   <%= simple_form_for([artwork, booking]) do |f| %>
-    <%= f.input :start_date, label: 'Date de début' %>
-    <%= f.input :end_date, label: 'Date de fin' %>
+    <%= f.input :start_date, label: "Début", as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, label: "Fin", as: :string, required: false, input_html: {class: "datepicker"} %>
     <%= f.submit 'Réserver maintenant', class: "btn btn-flat-big mt-4", style: "width: 200px" %>
   <% end %>
 </div>

@@ -64,3 +64,9 @@ a {
 .cards{
   text-align: center;
 }
+
+.centered-object {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
