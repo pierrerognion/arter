@@ -1,34 +1,40 @@
 <h3>Mes réservations (<%= @bookings.count %>)</h3>
 
-<div class="cards-home py-3">
-  <% @bookings.each do |booking| %>
-      <div class="card card-radius">
-        <%= link_to artwork_path(booking.artwork) do %>
-        <%= cl_image_tag booking.artwork.picture.url(:index_card), class:"card-img-top w-100" %>
-        <% end %>
-        <div class="card-body">
-            <%= link_to artwork_path(booking.artwork) do %>
-          <h5 class="card-title"><strong><%= booking.artwork.name %></strong></h5>
-          <p class="card-text"><%= booking.artwork.artist %></p>
-          <% end %>
-
-          <div>
-            <% if booking.status == "pending" %>
-              <%= "En attente de validation par le propriétaire" %>
-            <% elsif booking.status == "accepted" %>
-              <%= "Réservation validée" %>
-            <% else %>
-              <%= "Réservation refusée" %>
-            <% end %>
-          </div>
-
-          <div class="d-flex justify-content-between mt-3">
-            <p class="card-text">Du <%= booking.date_range %></p>
-            <%= link_to "🗑️", booking_path(booking), method: :delete %>
-          </div>
-
+<% @bookings.each do |booking| %>
+  <div class="card-product my-4">
+    <%= cl_image_tag booking.artwork.picture, class: "card-product-img" %>
+    <div class="card-product-infos" style="width: 900px">
+      <div class="d-flex">
+        <div class="ml-5">
+          <h2>Œuvre</h2>
+          <p><%= booking.artwork.name %></p>
+          <p><%= booking.artwork.artist %></p>
         </div>
-      </div>
 
-  <% end %>
-</div>
+        <div class="ml-5 border-left pl-5">
+          <h2>Durée de location</h2>
+          <p>Du <%= booking.date_range %></p>
+        </div>
+
+        <div class="ml-5 border-left pl-5">
+          <h2>Propriétaire</h2>
+          <p><%= booking.artwork.user.first_name %> <%= booking.artwork.user.last_name %></p>
+          <p><%= booking.artwork.user.email %></p>
+        </div>
+
+        <div class="ml-5 border-left pl-5">
+          <h2>Statut</h2>
+          <% if booking.status == "accepted" %>
+            <p>Location validée</p>
+          <% elsif booking.status == "declined" %>
+            <p>Location refusée</p>
+          <% else %>
+            <p>Validation en attente</p>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+    <%= link_to "<i class='far fa-trash-alt ml-auto' style='color: #ED254E; font-size: 32px; text-align: right'></i>".html_safe, booking_path(booking), method: :delete %>
+  </div>
+<% end %>
