@@ -67,7 +67,7 @@
         </div>
 
         <div>
-          <% unless @artwork.user == current_user %>
+          <% unless @artwork.user == current_user || !@artwork.availability? %>
 
           <hr class="mb-4" />
 
