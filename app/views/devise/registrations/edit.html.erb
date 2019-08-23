@@ -5,7 +5,22 @@
       <h3 class="d-flex justify-content-center">Mon Profil</h3>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
+
           <div class="form-inputs">
+
+          <div class="text-center">
+            <img src=<%= cl_image_path current_user.avatar %> class="card-img-top w-50 mt-3" alt="...">
+          </div>
+
+          <div class="text-center">
+          <label class="btn btn-flat-big mt-5 mb-5">
+             Ajouter un avatar
+             <span style="display:none;">
+               <%= f.input :avatar %>
+               <%= f.input :avatar_cache, as: :hidden %>
+             </span>
+           </label>
+          </div>
 
             <%= f.input :email,
                         required: true,
@@ -32,16 +47,20 @@
                         autofocus: true,
                         label: "Date de naissance" %>
 
+            <%= f.input :current_password,
+                        hint: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
+                        required: true,
+                        label: "Mot de passe actuel" %>
+
             <%= f.input :password,
                         hint: "leave it blank if you don't want to change it",
                         required: false,
                         label: "Mot de passe" %>
+
             <%= f.input :password_confirmation,
                         required: false,
                         label: "Confirmation du mot de passe"  %>
-            <%= f.input :current_password,
-                        hint: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
-                        required: true %>
+
 
           </div>
 
