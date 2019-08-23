@@ -1,39 +1,45 @@
 <h3>Mes œuvres en location</h3>
 
 <% @user.get_bookings.each do |booking| %>
-<div class="card-product">
+<div class="card-product my-4">
   <%= cl_image_tag booking.artwork.picture, class: "card-product-img" %>
   <div class="card-product-infos">
     <div class="d-flex">
-      <div class="ml-1">
+      <div class="ml-5">
         <h2>Œuvre</h2>
         <p><%= booking.artwork.name %></p>
         <p><%= booking.artwork.artist %></p>
       </div>
 
-      <div class="align-items-center ml-5">
+      <div class="align-items-center ml-5 border-left pl-5">
         <h2>Durée de location</h2>
-        <p class="mr-3">Du <%= booking.date_range %></p>
+        <p>Du <%= booking.date_range %></p>
       </div>
 
-      <div class="align-items-center ml-5">
+      <div class="align-items-center ml-5 border-left pl-5">
         <h2>Locataire</h2>
+        <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
         <p><%= booking.user.email %></p>
       </div>
 
-      <div class="align-items-center ml-5">
+      <div class="align-items-center ml-5 border-left pl-5">
         <h2>Statut</h2>
         <% if booking.status == "accepted" %>
-        <p>Location validée</p>
+          <p>Location validée</p>
         <% elsif booking.status == "declined" %>
-        <p>Location refusée</p>
-        <% else %> <%= link_to "Accepter",
-        accepted_artwork_booking_path(booking.artwork, booking), method: :patch,
-        class: 'btn btn-flat-big mt-4' %> <%= link_to "Refuser",
-        declined_artwork_booking_path(booking.artwork, booking), method: :patch,
-        class: 'btn btn-flat-big mt-4' %> <% end %>
+          <p>Location refusée</p>
+        <% else %>
+          <p>Validation en attente :</p>
+          <p>
+            <%= link_to "Accepter", accepted_artwork_booking_path(booking.artwork, booking), method: :patch, style: 'color: #ED254E; font-weight: bold' %>
+            /
+            <%= link_to "Refuser", declined_artwork_booking_path(booking.artwork, booking), method: :patch, style: 'color: #ED254E; font-weight: bold' %>
+          </p>
+          </p>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 <% end %>
+
