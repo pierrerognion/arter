@@ -8,19 +8,16 @@
         <% end %>
         <div class="card-body">
           <%= link_to artwork_path(artwork) do %>
-            <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
+            <h5 class="card-title" <strong><%= artwork.name %></strong></h5>
             <p class="card-text"><%= artwork.artist %></p>
           <% end %>
-
-          <div id="availability-toggle">
-              <%= link_to "Change status", reset_availability_artwork_path(artwork), method: :post, remote: true %> 
+          <br>
+          <div class="availability-info">
+            <div class="mr-2">
+                <p style="font-size: 13px">Disponibilité</p>
+                <%= render "shared/switch", artwork: artwork %>
+            </div>
           </div>
-          <p>Status: <%= artwork.availability %></p>
-          
-
-          <!-- <%= simple_form_for(artwork) do |f| %>
-            <%= f.input :availability, "data-remote" => true %>
-          <% end %> -->
           
         </div>
       </div>

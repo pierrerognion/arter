@@ -1,0 +1,5 @@
+<%= link_to reset_availability_artwork_path(artwork), method: :post, remote: true do %> 
+  <div class="switch <%=  "active" if artwork.availability %>" id="availability-toggle-<%= artwork.id %>">
+    <span class="dot"></span>
+  </div>
+<% end %>

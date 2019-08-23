@@ -1,6 +1,6 @@
 .card-artwork {
   overflow: hidden;
-  background: white;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0,0,0, 0.15);
 }
@@ -23,11 +23,13 @@
 .card {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   height: 520px;
+  background-color: white;
 }
 
 .card-dash {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  height: 520px;
+  height: 550px;
+  background-color: white;
 }
 
 .card-dash:hover {
@@ -51,15 +53,12 @@
   border-radius: 8px;
   overflow: hidden;
   position: relative
-
 }
 
 .card-body {
   justify-content: flex-end;
   display: flex;
   flex-direction: column;
-  margin-bottom: 29px;
-  position: absolute;
   bottom: -24px;
 }
 
@@ -123,6 +122,10 @@
   margin: 0;
 }
 
+.card-title {
+  margin-bottom: 6px;
+}
+
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -135,6 +138,13 @@
   padding: 16px;
 }
 
+.availability-info {
+  display: flex
+}
+.availability-info p {
+  padding-bottom: 0px;
+  margin-bottom: 4px;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

@@ -1,0 +1,29 @@
+.switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  border-radius: 34px;
+  background-color: rgb(216, 216, 216); 
+  transition: 0.4s;
+}
+
+.switch.active {
+  background-color: #ED254E;
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.switch.active .dot {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
