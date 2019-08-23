@@ -169,10 +169,7 @@
      transition: all 0.7s ease-out;
    }
 
-}
-
 // TEXT-----------------------------------------------------------------
-
 
  .artwork_description.fgroup-focus label {
     top: 490px !important;
@@ -182,7 +179,6 @@
     transform: scale(0.7);
     transition: all 0.7s ease-out;
   }
-
 
   .form-group.text small {
       bottom: 156px;
@@ -244,11 +240,6 @@
     border-radius: 0;
   }
 
-
-
-
-
-
 // SELECT-----------------------------------------------------------------
 
   .form-control.select:focus, #artwork_country:focus {
@@ -259,6 +250,8 @@
       box-shadow: none;
       transition: all 0.6s ease;
   }
+
+}
 
 
 // AUTRES-----------------------------------------------------------------
