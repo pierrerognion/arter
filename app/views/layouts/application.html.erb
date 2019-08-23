@@ -19,9 +19,9 @@
 
     <%= yield %>
 
+    <%= render "shared/footer" unless controller_name == 'artworks' && (action_name == 'show' || action_name == 'new' || action_name == 'edit') %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-  <%= render "shared/footer" %>
   </body>
 </html>
