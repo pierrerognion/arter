@@ -11,11 +11,8 @@
             <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
             <p class="card-text"><%= artwork.artist %></p>
           <% end %>
-
-          <div id="availability-toggle">
-              <%= link_to "Change status", reset_availability_artwork_path(artwork), method: :post, remote: true %> 
-          </div>
-          <p>Status: <%= artwork.availability %></p>
+              <%= render "shared/switch", artwork: artwork %>   
+      
           
 
           <!-- <%= simple_form_for(artwork) do |f| %>

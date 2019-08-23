@@ -1,11 +1,6 @@
-function refreshToggle(innerHTML) {
-  const switchToggle = document.getElementById('availability-toggle');
-  switchToggle.innerHTML = innerHTML;
+function refreshToggle() {
+  const switchToggle = document.getElementById('availability-toggle-<%= @artwork.id %>');
+  switchToggle.classList.toggle("active");
 }
 
-<% if @review.errors.any? %>
-  refreshToggle('<%= j render "artworks/show", artwork: @artwork, review: @review %>');
-<% else %>
-  addReview('<%= j render "artworks/show", availability: @availability %>');
-  refreshToggle('<%= j render "artworks/form", artwork: @artwork, review: Review.new %>');
-<% end %>
+  refreshToggle();
