@@ -23,6 +23,7 @@
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         label: "Mot de passe" %>
+                        class: 'form-text-mdp'
             <%= f.input :password_confirmation,
                         required: true,
                         label: "Confirmation du mot de passe" %>
