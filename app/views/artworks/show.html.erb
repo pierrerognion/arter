@@ -21,7 +21,7 @@
               role="button"
               aria-expanded="false"
               aria-controls="collapseExample"
-              ><strong>Voir les détails</strong>
+              ><strong><i class="fas fa-eye" style="color: #ED254E;"></i> Voir les détails</strong>
             </a>
           </p>
           <div class="collapse" id="collapseExample">
@@ -69,9 +69,17 @@
         <div>
           <% unless @artwork.user == current_user || !@artwork.availability? %>
 
-          <hr class="mb-4" />
+          <!-- <h5>Réserver cette œuvre</h5> -->
 
-          <h5>Réserver cette œuvre</h5>
+          <% unless @artwork.user == current_user %>
+            <div class="show-avatar">
+                <%= cl_image_tag @artwork.user.avatar, class: "small-avatar" %>
+                <div class="show-owner">
+                    <p><strong>Propriétaire</strong></p>
+                    <p><%= @artwork.user.first_name %> <%= @artwork.user.last_name %></p>
+                </div>
+            </div>
+          <% end %>
 
           <p>Prix par jour de location : <%= @artwork.price %> €</p>
 

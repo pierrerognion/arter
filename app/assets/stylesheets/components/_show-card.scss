@@ -1,0 +1,22 @@
+.show-avatar {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.small-avatar {
+  height: 50px;
+  border-radius: 50px;
+}
+
+.show-owner {
+  display: flex;
+  margin-left: 20px;
+  justify-content: center;
+  flex-direction: column
+}
+
+.show-owner p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

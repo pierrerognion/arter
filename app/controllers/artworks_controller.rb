@@ -46,8 +46,12 @@ class ArtworksController < ApplicationController
   def reset_availability
     @artwork = Artwork.find(params[:id])
     @artwork.availability = !@artwork.availability
-    @artwork.save
-    redirect_to profile_path
+    if @artwork.save
+      respond_to do |format|
+        format.html { redirect_to profile_path }
+        format.js  # <-- will render `app/views/profile/reset_availability.js.erb`
+      end
+    end
   end
 
   def destroy
