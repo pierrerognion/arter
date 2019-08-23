@@ -1,6 +1,6 @@
-const formFocus = () => {
+const formFocusText = () => {
 
-  document.querySelectorAll('.form-group.string input').forEach(function(element) {
+  document.querySelectorAll('.form-group.text textarea').forEach(function(element) {
     element.addEventListener('focus', (event) => {
       event.target.parentElement.classList.add("fgroup-focus");
     });
@@ -13,4 +13,4 @@ const formFocus = () => {
   });
 }
 
-export default formFocus;
+export default formFocusText;

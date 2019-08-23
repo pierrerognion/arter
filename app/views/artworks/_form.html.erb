@@ -38,9 +38,7 @@
               <fieldset>
                 <%= f.input :name, :label => "Nom de l'œuvre", hint: ' ' %>
                 <%= f.input :artist, :label => "Nom de l'artiste", hint: ' ' %>
-                <%= f.input :description, :label => "Description",placeholder: 'Sculptures Balloon Rabbit / Monkey / Swan de Jeff Koons (américain, né en 1955) pour Bernardaud. Les sculptures proviennent de la série Celebration, entièrement intitulée Balloon Swan (Jaune), Balloon Rabbit (Rouge) et Balloon Monkey (Bleu). Chacune comprend la boîte de présentation originale et les gants de manipulation.
-
-Provenance: Collection privée.'  %>
+                <%= f.input :description, :label => "Description" %>
               </fieldset>
 
               <div class="tab-buttons">
@@ -65,9 +63,9 @@ Provenance: Collection privée.'  %>
                           <i class="fas fa-ruler-combined"
                         style="color: #ED254E;"></i>
                         </td>
-                        <td><%= f.input :height, :label => "Hauteur (cm)", placeholder: '25,4', hint: ' ' %></td>
-                        <td><%= f.input :width, :label => "Largeur (cm)", placeholder: '43,18', hint: ' ' %></td>
-                        <td><%= f.input :depth, :label => "Profondeur(cm)", placeholder: '20,96', hint: ' '  %></td>
+                        <td><%= f.input :height, :label => "Hauteur (cm)", hint: ' ' %></td>
+                        <td><%= f.input :width, :label => "Largeur (cm)", hint: ' ' %></td>
+                        <td><%= f.input :depth, :label => "Profondeur(cm)", hint: ' '  %></td>
                       </tr>
                       <tr>
                         <td>
@@ -76,7 +74,7 @@ Provenance: Collection privée.'  %>
                             style="color: #ED254E;"
                           ></i>
                         </td>
-                        <td><%= f.input :weight, :label => "Poids (kg)", placeholder: '6,3', hint: ' ' %></td>
+                        <td><%= f.input :weight, :label => "Poids (kg)", hint: ' ' %></td>
                         <td></td>
                         <td></td>
                       </tr>
@@ -95,7 +93,7 @@ Provenance: Collection privée.'  %>
                 <div class="form-group string optional artwork_location">
                   <%= f.country_select :country, include_blank: 'Selectionner votre pays', selected: "Selectionner votre pays" %>
                 </div>
-                <%= f.input :location, :label => "Adresse", placeholder: '80 rue de ménilmontant 75020 Paris', hint: ' '  %>
+                <%= f.input :location, :label => "Adresse", hint: ' '  %>
               </fieldset>
               <div class="tab-buttons">
                 <button class="btn btn-flat-dark previous-btn mt-2" href="#">Précédent</button>
@@ -106,7 +104,7 @@ Provenance: Collection privée.'  %>
           <div class="tab-pane fade mt-3 display-none" id="pills-fifth" role="tabpanel" aria-labelledby="pills-fifth-tab">
             <h3 class="mb-4"> Quel est le Tarif journalier de votre œuvre ?</h3>
               <fieldset>
-                <%= f.input :price, :label => "Tarif / par jour (€)",placeholder: '475', hint: ' ' %>
+                <%= f.input :price, :label => "Tarif / par jour (€)", hint: ' ' %>
               </fieldset>
               <div class="tab-buttons">
                 <button class="btn btn-flat-dark previous-btn mt-2" href="#">Précédent</button>

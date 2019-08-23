@@ -1,6 +1,6 @@
-const formFocus = () => {
+const formFocusInteger = () => {
 
-  document.querySelectorAll('.form-group.string input').forEach(function(element) {
+  document.querySelectorAll('.form-group.integer input').forEach(function(element) {
     element.addEventListener('focus', (event) => {
       event.target.parentElement.classList.add("fgroup-focus");
     });
@@ -13,4 +13,4 @@ const formFocus = () => {
   });
 }
 
-export default formFocus;
+export default formFocusInteger;

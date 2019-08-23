@@ -6,6 +6,12 @@
   @extend .form-control
 }
 
+.table th, .table td {
+    padding: 35px 10px 0px 15px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
 .form-new {
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -16,11 +22,6 @@
   width: 700px;
 }
 
-// .nav-step-container {
-//   margin-top: 60px;
-// }
-
-
 .tab-buttons {
   display: flex;
   justify-content: space-between;
@@ -29,7 +30,6 @@
 #first-tab {
   justify-content: flex-end;
 }
-
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: white;
@@ -41,119 +41,232 @@
   transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.form-group.string {
-  position: relative;
-  height: 75px;
-}
 
-.form-control.string {
-  border: none;
-  border-radius: 0;
-}
-
-.form-control.string:focus {
-  box-shadow: none;
-}
-
-.form-group.string input:focus + small {
-  background-position: 0 0;
-  background-color: transparent;
-  transition: all 0.5s ease-out;
-}
-
-.form-control.integer {
-  border: none;
-  border-radius: 0;
-}
-
-.form-control.integer:focus {
-  box-shadow: none;
-}
-
-.form-group.integer input:focus + small {
-  background-position: 0 0;
-  background-color: transparent;
-  transition: all 0.5s ease-out;
-}
+//----------------------- ANIMATED BUTTON ------------------------------------
 
 
-.form-group.integer small {
-  width: 8%;
-}
+#new_artwork {
 
-small {
-  position: absolute;
-  width: 100%;
-  height: 1.5px;
-  background: linear-gradient(to right, #ED254E 50%, #0000004d 50%);
-  background-color: rgba(0, 0, 0, 0.3);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: all 0.6s ease;
-}
+// COMMON PART--------------------------------------------------------------
 
-// A REMETTRE SI TRAVAIL SUR LE JS
-.form-group.string label {
-  position: absolute;
-  top: 12px;
-  color: #0000004d;
-  transition: all 0.7s ease-out;
-}
+ .fgroup-focus label {
+    top: -19px !important;
+    // left: -20px;
+    color: #ed254e !important;
+    transform-origin: left;
+    transform: scale(0.7);
+    transition: all 0.7s ease-out;
+  }
 
-.fgroup-focus label {
-  top: -30px !important;
-  // left: -20px;
-  color: #ed254e !important;
-  transform-origin: left;
-  transform: scale(0.7);
-  transition: all 0.7s ease-out;
-}
+// STRING--------------------------------------------------------------
 
-textarea.form-control, textarea#artwork_country {
-    height: 300px;
-}
+  .form-group.string {
+    position: relative;
+    height: 75px;
+  }
 
-.form-control.text {
-    color: #495057;
-    border-radius: 10px;
-    border: 1.5px solid #0000004d;
-    transition: all 0.6s ease;
-    resize: none;
-}
+  .form-control.string {
+    border: none;
+    border-radius: 0;
+  }
 
-.form-control.text:focus, #artwork_country:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #ED254E;
-    border-radius: 20px;
+  .form-control.string:focus {
     box-shadow: none;
+  }
+
+  .form-group.string input:focus + small {
+    background-position: 0 0;
+    background-color: transparent;
+    transition: all 0.5s ease-out;
+  }
+
+  small {
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(to right, #ED254E 50%, #0000004d 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
     transition: all 0.6s ease;
+  }
+
+
+  .form-group.string label {
+    position: absolute;
+    top: 12px;
+    color: #0000004d;
+    transition: all 0.7s ease-out;
+  }
+
+// INTEGER-----------------------------------------------------------------
+
+  .form-group.integer small {
+    width: 60%;
+  }
+
+  .artwork_price.form-group.integer small {
+    width: 23%;
+  }
+
+.artwork_.fgroup-focus label {
+   top: 490px !important;
+   // left: -20px;
+   color: #ed254e !important;
+   transform-origin: left;
+   transform: scale(0.7);
+   transition: all 0.7s ease-out;
+ }
+
+ .form-group.integer {
+    position: relative;
+    height: 75px;
+    padding-top: 0px;
+  }
+
+   .artwork_price.form-group.integer {
+      position: relative;
+      height: 75px;
+      padding-top: 13px;
+  }
+
+
+  .form-control.integer {
+     border: none;
+     border-radius: 0;
+   }
+
+  .form-control.integer:focus {
+     box-shadow: none;
+   }
+
+  .form-group.integer input:focus + small {
+     background-position: 0 0;
+     background-color: transparent;
+     transition: all 0.5s ease-out;
+   }
+
+  .form-group.integer label {
+     position: absolute;
+     top: 12px;
+     color: #0000004d;
+     transition: all 0.7s ease-out;
+   }
+
+  .artwork_price.form-group.integer label {
+     position: absolute;
+     top: 25px;
+     color: #0000004d;
+     transition: all 0.7s ease-out;
+   }
+
+  .artwork_price.fgroup-focus label {
+     top: -3px !important;
+     // left: -20px;
+     color: #ed254e !important;
+     transform-origin: left;
+     transform: scale(0.7);
+     transition: all 0.7s ease-out;
+   }
+
+// TEXT-----------------------------------------------------------------
+
+ .artwork_description.fgroup-focus label {
+    top: 490px !important;
+    // left: -20px;
+    color: #ed254e !important;
+    transform-origin: left;
+    transform: scale(0.7);
+    transition: all 0.7s ease-out;
+  }
+
+  .form-group.text small {
+      bottom: 156px;
+      width: 48.5%;
+      height: 2px;
+  }
+
+  .form-control.text, .text#artwork_country {
+      border: none;
+      -webkit-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+      height: 40px;
+  }
+
+  .form-control.text:focus, .text#artwork_country:focus {
+      border: 2px solid red;
+      -webkit-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+      height: 300px;
+  }
+
+  .form-control.text:focus + small, .text#artwork_country:focus + small{
+    opacity: 0;
+  }
+
+  .form-group.text label {
+    position: absolute;
+    top: 522px;
+    color: #0000004d;
+    transition: all 0.7s ease-out;
+  }
+
+  textarea.form-control, textarea#artwork_country {
+      height: 300px;
+  }
+
+  .form-control.text {
+      color: #495057;
+      border-radius: 10px;
+      border: 1.5px solid #0000004d;
+      transition: all 0.6s ease;
+      resize: none;
+  }
+
+  .form-control.text:focus, #artwork_country:focus {
+      color: #495057;
+      background-color: #fff;
+      border-color: #ED254E;
+      border-radius: 7px;
+      box-shadow: none;
+      transition: all 0.6s ease;
+      resize: none;
+  }
+
+  .form-control.text, .text#artwork_country {
+    border: 0;
     resize: none;
-}
+    border-bottom: 2px solid;
+    border-radius: 0;
+  }
 
-.form-control.select:focus, #artwork_country:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #ED254E;
-    border-radius: 20px;
-    box-shadow: none;
-    transition: all 0.6s ease;
-}
+// SELECT-----------------------------------------------------------------
 
-.form-control::placeholder {
-    color: #cccccc;
-}
+  .form-control.select:focus, #artwork_country:focus {
+      color: #495057;
+      background-color: #fff;
+      border-color: #ED254E;
+      border-radius: 5px;
+      box-shadow: none;
+      transition: all 0.6s ease;
+  }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
 }
 
 
+// AUTRES-----------------------------------------------------------------
 
-// .form-group.string input:focus + .form-group.string label {
-//   bottom: 40px;
-// }
+  .form-control::placeholder {
+      color: #cccccc;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+  }
+
+
+
