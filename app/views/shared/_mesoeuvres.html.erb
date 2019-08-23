@@ -8,10 +8,17 @@
         <% end %>
         <div class="card-body">
           <%= link_to artwork_path(artwork) do %>
-            <h5 class="card-title"><strong><%= artwork.name %></strong></h5>
+            <h5 class="card-title" <strong><%= artwork.name %></strong></h5>
             <p class="card-text"><%= artwork.artist %></p>
           <% end %>
-              <%= render "shared/switch", artwork: artwork %> <!-- -->
+          <br>
+          <div class="availability-info">
+            <div class="mr-2">
+                <p style="font-size: 13px">Disponibilité</p>
+                <%= render "shared/switch", artwork: artwork %>
+            </div>
+          </div>
+          
         </div>
       </div>
   <% end %>
