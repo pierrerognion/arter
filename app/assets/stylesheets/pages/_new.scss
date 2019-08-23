@@ -44,6 +44,9 @@
 
 //----------------------- ANIMATED BUTTON ------------------------------------
 
+.form-group.string {
+    position: relative;
+  }
 
 #new_artwork {
 
@@ -62,7 +65,7 @@
 
   .form-group.string {
     position: relative;
-    height: 75px;
+    height: 75px !important;
   }
 
   .form-control.string {
